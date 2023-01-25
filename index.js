@@ -33,13 +33,14 @@ function validarChute(){
     if(valor == numeroSorteado){
         btnEnvio.disabled = true;
         inputChute.disabled = true;
-        inputChute.style.backgroundColor = "#AAD6A0"
+        inputChute.style.backgroundColor = "#AAD6A0";
+        let textTentativas = 'Número de Tentativas: ' + numeroTentativas;
         if(numeroTentativas == 1){
             textTentativas = "Bom de Chute! Você acertou de Primeira!"
         }
         bootbox.alert({
             title: 'Parabéns!! Você acertou!',
-            message: `<span style="color:green">O número sorteado foi o número <b>${numeroSorteado}</b></span><br/>Número de Tentativas: ` + numeroTentativas
+            message: `<span style="color:green">O número sorteado foi o número <b>${numeroSorteado}</b></span><br/>${textTentativas}`
         });
     }else{
         inputChute.value = "";
